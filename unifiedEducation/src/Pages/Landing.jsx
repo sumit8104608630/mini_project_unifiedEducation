@@ -1,4 +1,5 @@
 import { GraduationCap, Menu, X, BookOpen, Award, BarChart3, Users, Building2 } from 'lucide-react';
+import { useState } from 'react';
 
 function Landing() {
     const features = [
@@ -44,6 +45,9 @@ function Landing() {
   ];
 
   return (
+
+
+
     <div className=''>
         <section className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8  py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-12 sm:mb-16">
@@ -51,8 +55,7 @@ function Landing() {
             Ministry of Education Initiative
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-blue-500">Unified Education</span>{" "}
-            <span className="text-gray-600">Platform</span>
+            <span className="bg-gradient-to-r from-blue-500 via-teal-500 to-yellow-500 bg-clip-text text-transparent font-semibold">Unified Education Platform</span>{" "}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             A comprehensive system connecting students, teachers, and institutions for seamless educational management
@@ -96,7 +99,7 @@ function Landing() {
               key={index}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${portal.gradient} flex items-center justify-center text-white mb-6 shadow-md`}>
+              <div className={`w-16 h-16 rounded-2xl  ${portal.gradient} flex items-center justify-center text-white mb-6 shadow-md`}>
                 {portal.icon}
               </div>
               
@@ -124,6 +127,18 @@ function Landing() {
           ))}
         </div>
       </section>
+      <footer className="bg-gray-100 border-t border-gray-200 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-2">
+          <p className="text-gray-600 text-sm">
+            © 2024 UniEdu Portal - Department of Higher Education
+          </p>
+          <p className="text-gray-500 text-sm">
+            A unified platform for modern educational management
+          </p>
+        </div>
+      </div>
+    </footer>
       </div>
   )
 }

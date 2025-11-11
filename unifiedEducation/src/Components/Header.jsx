@@ -1,9 +1,11 @@
 import { GraduationCap, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Login from './Login';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen,setIsOpen]=useState(false);
 
   return (
     <header className="w-full  bg-white border-b fixed border-gray-200 shadow-sm">
@@ -21,7 +23,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Sign In Button */}
-          <button className="hidden sm:block px-4 md:px-6 py-2 text-gray-700 font-medium hover:bg-gray-200 border-2 border-gray-400 cursor-pointer rounded-lg transition-colors duration-200">
+          <button onClick={()=>setIsOpen(true)} className="hidden sm:block px-4 md:px-6 py-2 text-gray-700 font-medium hover:bg-gray-200 border-2 border-gray-400 cursor-pointer rounded-lg transition-colors duration-200">
             Sign In
           </button>
 
@@ -42,12 +44,13 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="sm:hidden pb-4 pt-2 border-t border-gray-100 mt-2">
-            <button className="w-full px-4 py-2 text-gray-700 font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200 text-left">
+            <button onClick={()=>setIsOpen(true)} className="w-full px-4 py-2 text-gray-700 font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200 text-left">
               Sign In
             </button>
           </div>
         )}
       </div>
+      {isOpen&&<Login isOpen={isOpen} setIsOpen={setIsOpen}/>}
     </header>
   );
 }
