@@ -13,8 +13,8 @@ function Login({setIsOpen}) {
       title: 'Teacher Login',
       gradient: 'from-teal-500 to-green-500'
     },
-    admin: {
-      title: 'Admin Login',
+    institute: {
+      title: 'Institute Login',
       gradient: 'from-yellow-500 to-orange-500'
     }
   };
@@ -60,14 +60,14 @@ function Login({setIsOpen}) {
                 Teacher
               </button>
               <button
-                onClick={() => setActiveForm('admin')}
+                onClick={() => setActiveForm('institute')}
                 className={`flex-1 py-3 text-sm font-medium cursor-pointer transition-all ${
-                  activeForm === 'admin'
+                  activeForm === 'institute'
                     ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                Admin
+                Institute
               </button>
             </div>
 
@@ -78,7 +78,7 @@ function Login({setIsOpen}) {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     {activeForm === 'student' ? 'Student ID' : 
                      activeForm === 'teacher' ? 'Employee ID' : 
-                     'Admin ID'}
+                     'Institute ID'}
                   </label>
                   <input
                     type="text"
