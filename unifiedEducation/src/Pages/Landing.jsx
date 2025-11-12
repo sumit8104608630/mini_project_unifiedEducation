@@ -1,22 +1,14 @@
 import { GraduationCap, Menu, X, BookOpen, Award, BarChart3, Users, Building2 } from 'lucide-react';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Landing() {
     const features = [
-    {
-      icon: <BookOpen className="w-12 h-12" />,
-      title: "Course Management",
-      description: "Comprehensive course catalog and materials"
-    },
-    {
-      icon: <Award className="w-12 h-12" />,
-      title: "Assessment System",
-      description: "Assignment submission and grading workflow"
-    },
+
     {
       icon: <BarChart3 className="w-12 h-12" />,
       title: "Analytics Dashboard",
-      description: "Track performance and attendance metrics"
+      description: "Track performance and attendance metrics",
+      link : "/analytic"
     }
   ];
 
@@ -48,7 +40,7 @@ function Landing() {
 
 
 
-    <div className=''>
+    <div className=' mt-10'>
         <section className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8  py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-6 px-6 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
@@ -63,9 +55,9 @@ function Landing() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 sm:mb-20">
+        <div className="flex cursor-pointer justify-center md:grid-cols-3 gap-6 mb-16 sm:mb-20">
           {features.map((feature, index) => (
-            <div
+            <Link to={feature.link}
               key={index}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300 text-center"
             >
@@ -78,7 +70,7 @@ function Landing() {
               <p className="text-gray-600">
                 {feature.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 

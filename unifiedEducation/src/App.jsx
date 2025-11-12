@@ -5,6 +5,7 @@ import Layout from './Pages/Layout'
 import Landing from './Pages/Landing'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './Pages/About'
+import AnalyticsDashBoard from './Pages/AnalyticsDashBoard'
 function App() {
 
 const router=createBrowserRouter([
@@ -19,6 +20,10 @@ const router=createBrowserRouter([
       {
         path:"/about",
         Component: About
+      },
+      {
+        path:"/analytic",
+        Component: AnalyticsDashBoard
       }
     ]
   }
