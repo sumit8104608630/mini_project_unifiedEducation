@@ -112,9 +112,9 @@ function Landing() {
                 ))}
               </ul>
               
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200 shadow-sm">
+              <Link to={"/student-portal"} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200 shadow-sm">
                 Access Portal
-              </button>
+              </Link>
             </div>
           ))}
         </div>

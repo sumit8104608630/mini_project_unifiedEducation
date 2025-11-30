@@ -7,6 +7,11 @@ const studentSchema=new mongoose.Schema({
         type:String,
         required: true
     },
+
+    profilePic:{
+      type:String,
+
+    },
     gender:{
         type:String,
         required: true,
@@ -16,13 +21,16 @@ const studentSchema=new mongoose.Schema({
         type:Date,
         required:true
     },
-      achievements: [
-    {
-      title: String,
-      year: Number,
-      description: String,
-    },
-  ],
+      batch: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Batch"
+  },
+
+department: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Department"
+}
+,
       projects: [
     {
       title: String,
@@ -48,6 +56,13 @@ const studentSchema=new mongoose.Schema({
     type: String,
     default: "student",
   },
+  courses: [
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Course"
+  }
+]
+,
   assignmentSubmission:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"Submission"

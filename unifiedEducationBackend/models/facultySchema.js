@@ -5,6 +5,7 @@ const facultySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
   phone: {
     type: Number,
     required: true,
@@ -15,24 +16,25 @@ const facultySchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  course: [
-    {
-      type: String
-    }
-  ],
+  courses: [
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Course"
+  }
+],
   password: {
     type: String,
     required: true
   },
-
-  // Correct many-to-many relation with students
   students: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Student"
     }
-  ]
-
+  ],
+profilePic:{
+  type:String
+}
 }, { timestamps: true });
 
 export const Faculty = mongoose.model("Faculty", facultySchema);

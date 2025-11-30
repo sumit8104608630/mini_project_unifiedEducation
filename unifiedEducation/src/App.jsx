@@ -6,6 +6,7 @@ import Landing from './Pages/Landing'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './Pages/About'
 import AnalyticsDashBoard from './Pages/AnalyticsDashBoard'
+import StudentPortal from './Pages/StudentPortal'
 function App() {
 
 const router=createBrowserRouter([
@@ -24,6 +25,10 @@ const router=createBrowserRouter([
       {
         path:"/analytic",
         Component: AnalyticsDashBoard
+      },
+      {
+        path:"/student-portal",
+        Component: StudentPortal
       }
     ]
   }
