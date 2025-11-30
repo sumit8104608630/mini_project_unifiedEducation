@@ -18,21 +18,24 @@ function Landing() {
       title: "Student Portal",
       description: "Access courses, submit assignments, track grades and attendance",
       features: ["View Courses", "Submit Work", "Track Progress"],
-      gradient: "from-blue-500 to-blue-600"
+      gradient: "from-blue-500 to-blue-600",
+      Link:"/student-portal"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Teacher Portal",
       description: "Manage courses, grade assignments, track student attendance",
       features: ["Course Management", "Grading", "Attendance"],
-      gradient: "from-teal-500 to-green-500"
+      gradient: "from-teal-500 to-green-500",
+      Link:"/faculty-portal"
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: "Admin Portal",
       description: "Oversight, analytics, user management and institutional reports",
       features: ["Analytics", "User Management", "Reports"],
-      gradient: "from-orange-400 to-blue-500"
+      gradient: "from-orange-400 to-blue-500",
+      Link:"/student-portal"
     }
   ];
 
@@ -112,7 +115,7 @@ function Landing() {
                 ))}
               </ul>
               
-              <Link to={"/student-portal"} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200 shadow-sm">
+              <Link to={portal.Link} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200 shadow-sm">
                 Access Portal
               </Link>
             </div>

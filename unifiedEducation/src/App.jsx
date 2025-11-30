@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './Pages/About'
 import AnalyticsDashBoard from './Pages/AnalyticsDashBoard'
 import StudentPortal from './Pages/StudentPortal'
+import FacultyPortal from './Pages/FacultyPortal'
 function App() {
 
 const router=createBrowserRouter([
@@ -29,6 +30,10 @@ const router=createBrowserRouter([
       {
         path:"/student-portal",
         Component: StudentPortal
+      },
+      {
+        path:"/faculty-portal",
+        Component: FacultyPortal
       }
     ]
   }
